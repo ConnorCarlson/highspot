@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'mixtape/cli'
+
+begin
+  Mixtape::CLI.apply_changes(ARGV)
+rescue Mixtape::CLI::Error => e
+  warn e.message
+  exit(false)
+end
